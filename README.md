@@ -48,7 +48,7 @@ CCO-K는 비전공자 맞춤 한국어 Claude Code + OMC 환경입니다.
 2. 아래 명령을 입력합니다.
 
 ```text
-/plugin marketplace add YOUR_GITHUB_USERNAME/claude-code-omc-korean
+/plugin marketplace add DinoEgg-code/claude-code-omc-korean
 /plugin install cco-k@cco-k-marketplace
 ```
 
