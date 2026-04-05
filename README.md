@@ -1,7 +1,11 @@
-# claude code-korean
+# CCO-K
 
-비전공자 맞춤 한국어 Claude Code 환경입니다.  
+권장 GitHub 저장소명은 `claude-code-omc-korean` 입니다.
+
+CCO-K는 비전공자 맞춤 한국어 Claude Code + OMC 환경입니다.  
 핵심 목표는 `/메뉴판` 하나만 기억해도 개발을 이어갈 수 있게 만드는 것입니다.
+
+현재 버전: `0.1.0`
 
 이 저장소는 기본 한국어 스킬에 더해 [OMC (Oh My ClaudeCode)](https://omc.vibetip.help/) 자동화 기능까지 함께 쓰도록 설계되어 있습니다.
 
@@ -11,6 +15,7 @@
 - 한국어로 쉬운 설명, 요청서 정리, 파일 찾기, 에러 해결 지원
 - OMC 연동으로 자동 개발, 원인 추적, 자동 검수, 외부 조언까지 확장
 - `.omc` 폴더는 자동 기록/분석용으로 유지
+- MIT License로 공개 가능
 
 ## 설치 방법
 
@@ -78,3 +83,9 @@
 - `.omc` : OMC가 생성하는 자동 기록/분석 폴더
 
 `.omc` 안의 파일은 직접 수정하지 않는 것을 권장합니다.
+
+## 공개 전 체크
+
+- `.omc/sessions`, `.omc/state`, `.claude/settings.local.json` 은 `.gitignore` 로 제외
+- 라이선스는 `MIT`
+- 버전 정보는 `VERSION` 파일과 README에 함께 표기
