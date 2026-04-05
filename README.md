@@ -7,7 +7,17 @@ CCO-K는 비전공자 맞춤 한국어 Claude Code + OMC 환경입니다.
 
 현재 버전: `0.1.0`
 
+![CCO-K 메뉴판](docs/images/menu.png)
+
+메뉴판 예시 화면입니다. 사용자는 Claude Code를 실행한 뒤 `/메뉴판` 만 입력하면 됩니다.
+
 이 저장소는 기본 한국어 스킬에 더해 [OMC (Oh My ClaudeCode)](https://omc.vibetip.help/) 자동화 기능까지 함께 쓰도록 설계되어 있습니다.
+
+## 한 줄 소개
+
+- Claude Code를 한국어 메뉴형으로 쉽게 쓰고 싶은 비전공자용 플러그인
+- `/메뉴판` 하나로 기본 작업과 OMC 자동화 모드를 함께 사용
+- 아이디어 정리부터 구현, 수정, 배포 전 점검까지 한국어 흐름으로 연결
 
 ## 특징
 
@@ -19,27 +29,79 @@ CCO-K는 비전공자 맞춤 한국어 Claude Code + OMC 환경입니다.
 
 ## 설치 방법
 
+현재 CCO-K는 Claude Code 플러그인 형태로 배포할 수 있도록 구조를 갖췄습니다.
+
+### 로컬 테스트 설치
+
 1. 이 저장소를 원하는 위치에 내려받습니다.
-2. 터미널에서 저장소 폴더로 이동합니다.
-3. 아래 명령을 실행합니다.
-
-```bash
-./install.sh
-```
-
-4. 스크립트가 OMC 설치와 초기 설정을 먼저 시도합니다.
-5. 자동 설정이 끝나지 않았으면 Claude Code 안에서 아래 명령을 한 번 실행합니다.
+2. 이 저장소의 상위 폴더에서 Claude Code를 실행합니다.
+3. 아래 명령을 입력합니다.
 
 ```text
-/oh-my-claudecode:omc-setup --local
-/oh-my-claudecode:omc-doctor
+/plugin marketplace add ./claude-korean
+/plugin install cco-k@cco-k-marketplace
 ```
 
-6. 이후 이 프로젝트에서 Claude Code를 열고 아래만 입력하시면 됩니다.
+### GitHub 공개 후 설치
+
+1. Claude Code를 실행합니다.
+2. 아래 명령을 입력합니다.
+
+```text
+/plugin marketplace add YOUR_GITHUB_USERNAME/claude-code-omc-korean
+/plugin install cco-k@cco-k-marketplace
+```
+
+3. 플러그인 설치 후 아래 명령을 먼저 실행합니다.
+
+```text
+/ccok-setup
+```
+
+4. 설정이 끝나면 아래만 기억하시면 됩니다.
 
 ```text
 /메뉴판
 ```
+
+중요한 점:
+- Claude Code 공식 플러그인 구조에서는 다른 플러그인을 선언적으로 자동 의존성 설치하는 필드를 확인하지 못했습니다.
+- 그래서 CCO-K는 플러그인 설치 후 `/ccok-setup` 명령으로 OMC 설치와 연결을 최대한 부드럽게 마무리하는 방식으로 구현합니다.
+
+### 설치 후 첫 사용
+
+```text
+/ccok-setup
+/메뉴판
+```
+
+`/ccok-setup` 은 OMC 연결을 도와주는 초기 설정 명령입니다.  
+설정이 끝난 뒤에는 `/메뉴판` 중심으로 사용하시면 됩니다.
+
+## 로컬 설치 테스트 체크리스트
+
+- `claude plugin validate ./plugins/cco-k` 가 통과하는지 확인
+- `claude plugin validate ./.claude-plugin/marketplace.json` 가 통과하는지 확인
+- `/plugin marketplace add ./claude-korean` 이 정상 동작하는지 확인
+- `/plugin install cco-k@cco-k-marketplace` 로 플러그인이 설치되는지 확인
+- Claude Code 재시작 후 `/메뉴판` 이 보이는지 확인
+- `/ccok-setup` 안내가 OMC 설치 흐름을 자연스럽게 보여주는지 확인
+- `/길잡이`, `/추천`, `/자동개발`, `/끝까지`, `/초고속`, `/계획모드` 정도를 실제로 한 번씩 눌러보며 문구가 자연스러운지 확인
+- OMC 미설치 상태와 설치 완료 상태 둘 다에서 안내가 어색하지 않은지 확인
+
+## 추천 alias
+
+초보자 입장에서는 조금 더 자연스러운 한국어 별칭이 있으면 좋습니다. 현재 구조에 아래 alias를 추가했습니다.
+
+- `/메뉴` → `/메뉴판`
+- `/도움말` → `/메뉴판`
+- `/시작하기` → `/길잡이`
+- `/진단` → `/추천`
+- `/빠르게` → `/초고속`
+- `/끝장내기` → `/끝까지`
+- `/구상정리` → `/생각정리`
+- `/팀플레이` → `/팀실행`
+- `/검수` → `/자동검수`
 
 ## 메뉴 예시
 

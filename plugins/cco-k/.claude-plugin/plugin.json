@@ -1,0 +1,18 @@
+{
+  "name": "cco-k",
+  "version": "0.1.0",
+  "description": "비전공자 맞춤 한국어 Claude Code + OMC 플러그인",
+  "author": {
+    "name": "CCO-K"
+  },
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/claude-code-omc-korean",
+  "repository": "https://github.com/YOUR_GITHUB_USERNAME/claude-code-omc-korean",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "korean",
+    "omc",
+    "beginner",
+    "non-developer"
+  ]
+}
