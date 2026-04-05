@@ -1,0 +1,24 @@
+{
+  // claudecode-korean 프로젝트 전용 OMC 설정
+  // 너무 공격적인 설정은 피하고, 비전공자용으로 무난한 기본값만 둡니다.
+  "routing": {
+    "enabled": true,
+    "defaultTier": "MEDIUM"
+  },
+  "features": {
+    "parallelExecution": true,
+    "continuationEnforcement": true,
+    "autoContextInjection": true
+  },
+  "permissions": {
+    "allowBash": true,
+    "allowEdit": true,
+    "allowWrite": true,
+    "maxBackgroundTasks": 3
+  },
+  "externalModels": {
+    "defaults": {
+      "codexModel": "gpt-5.3-codex"
+    }
+  }
+}
