@@ -10,6 +10,7 @@ SETUP_HINT_2="/oh-my-claudecode:omc-doctor"
 
 echo "========================================"
 echo "CCO-K 설치 도우미"
+echo "비전공자용 한국어 Claude Code + OMC 환경"
 echo "========================================"
 echo
 
@@ -60,9 +61,14 @@ echo "  ${SETUP_HINT_1}"
 echo "  ${SETUP_HINT_2}"
 echo
 echo "6. 한국어 메뉴 사용 시작"
-echo "설정이 끝나면 이 프로젝트 폴더에서 Claude Code를 열고 아래만 입력하시면 됩니다."
+echo "설정이 끝나면 이 프로젝트 폴더에서 Claude Code를 열고 아래 순서만 기억하시면 됩니다."
 echo
 echo "  /메뉴판"
+echo
+echo "처음 시작 순서 요약:"
+echo "  1) /ccok-setup"
+echo "  2) /메뉴판"
+echo "  3) 필요한 명령 선택"
 echo
 echo "추가 안내:"
 echo "- OMC 설정 파일 기본값은 ${ROOT_DIR}/.claude/omc.jsonc 에 준비되어 있습니다."

@@ -1,12 +1,17 @@
 {
   // claudecode-korean 프로젝트 전용 OMC 설정
   // 너무 공격적인 설정은 피하고, 비전공자용으로 무난한 기본값만 둡니다.
+  // 기본 시작 순서: /ccok-setup → /메뉴판 → 필요한 명령 선택
   "routing": {
     "enabled": true,
     "defaultTier": "MEDIUM"
   },
   "features": {
+    // 여러 작업을 동시에 처리하는 옵션입니다.
+    // 초고속, 팀실행 같은 모드 체감과 연결됩니다.
     "parallelExecution": true,
+    // 중간에 끊기지 않고 계속 이어서 작업하려는 성향입니다.
+    // 끝까지, 자동개발 같은 모드와 잘 맞습니다.
     "continuationEnforcement": true,
     "autoContextInjection": true
   },
@@ -14,6 +19,8 @@
     "allowBash": true,
     "allowEdit": true,
     "allowWrite": true,
+    // 동시에 돌릴 백그라운드 작업 개수입니다.
+    // 노트북이 버거우면 2로 낮춰도 됩니다.
     "maxBackgroundTasks": 3
   },
   "externalModels": {
